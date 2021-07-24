@@ -1,0 +1,49 @@
+plugins {
+    id 'jacoco'
+    id 'com.github.kt3k.coveralls' version '2.6.3'
+}
+
+apply plugin: 'java'
+apply plugin: "jacoco"
+
+version = '1.1'
+
+buildDir = new File(rootProject.projectDir, "build")
+
+jacocoTestReport {
+    reports {
+        xml.enabled = true // coveralls plugin depends on xml format report
+        html.enabled = true
+    }
+}
+
+repositories {
+	mavenCentral()
+	jcenter()
+}
+
+compileJava {
+    sourceCompatibility = '1.8'
+}
+
+sourceSets {
+    main {
+        java.srcDirs = [file('src/java')]
+        resources.srcDirs = [file('src/resources')]
+    }
+    test {
+        java.srcDirs = [file('test/unit')]
+        resources.srcDirs = [file('test/resources')]
+    }
+}
+
+jar {
+	manifest {
+	    attributes('Implementation-Title': project.name,
+		'Implementation-Version': version)
+	}
+}
+
+dependencies {
+	testCompile 'junit:junit:4.12'
+}

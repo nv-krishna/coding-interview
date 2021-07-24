@@ -1,0 +1,134 @@
+# Self-Check
+
+## Java Basics
+- **Integer**
+   - How to get the max integer?
+   - How to get the min integer?
+- **String**
+   - How to traverse each digit? (2 ways)
+   - How to delete a digit?
+   - How to get the prefix?
+- **Array**
+   - How to initialize a 1D array?
+   - How to initialize a 1D array with values?
+   - How to initialize a 2D array?
+   - How to initialize a 2D array with values?
+   - How to traverse a 2D array by row?
+   - How to sort a 1D array in ascending order?
+   - How to sort a 1D array in descending order?
+   - How to fill all the elements by the same value in 1D array?
+   - How to get a sub-array from 1D array?
+- **List**
+   - How to sort a list in ascending order?
+   - How to sort a list in descending order?
+   - How to get a sub-list from a list?
+   - How to check there is an common element in both 2 lists?
+- **Map**
+   - How to initialize a map?
+   - How to initialize a map with values?
+   - How to get the value by key?
+   - How to get all the keys?
+   - How to get all the values?
+   - How to convert all the values from a map to a list?
+- **Stack**
+   - How to initialize a stack?
+   - How to add an element?
+   - How to get and remove the top element?
+   - How to get the top element without removing?
+- **Queue**
+   - How to initilize a queue?
+   - How to add an element?
+   - How to get and remove the head element?
+   - How to get the head element without removing?
+- **Priority Queue**
+   - What is priority queue?
+   - How to initilize a priority queue?
+   - How to initilize a max priority queue?
+   - The head element is the smallest or largest?
+- **TreeMap**
+   - What is TreeMap?
+   - How to get the smallest key?
+   - How to get the largest key?
+- **Type Conversions**
+   - From String
+      - String to int
+      - String to double
+      - String to char
+      - String to char array
+   - To String
+      - int to String
+      - double to String
+      - char array to String
+      - char to String
+   - Array and list
+      - From array to list
+      - From list to array
+- **Arithmetic Operations**
+   - Calculate those
+      - 3 / 2   = ?
+      - 3 / 2.0 = ?
+      - 3 / 4   = ?
+      - 999 / 100  = ?
+      - 999 / 1000 = ?
+      - 999 % 1000 = ?
+      - 999 % 100  = ?
+- **Class with custom sorting**
+   - How to create a class with custom sorting?
+- **Random Number**
+   - How to get a random integer from 0 to max?
+   - How to get a random integer from min to max?
+   - How to get a random double from 0 to 1?
+   - How to get a random double from 0 to max?
+
+## Data Structure
+- **Array**
+   - 1D array
+      - Write a code to reverse an array in place?
+   - 2D array
+      - Serial number
+         - The purpose of assigning a serial number to each cell.
+         - Convert row and column to serial number
+         - Convert serial number to row and column
+- **Linked List**
+   - Strategies
+      - What is the solution for the operations which is againest the direction of the linked list?
+      - What is the key step for manipulating (add or remove) a certain node?
+- **Binary Tree**
+   - Types
+      - What is complete binary tree?
+      - What is balanced binary tree?
+   - Variations
+      - What is binary search tree?
+      - What is binary heap?
+      - What is trie?
+   - Traversal
+      - Depth-first search
+         - Write code for pre-order, in-order, post-order
+         - What is the node visiting sequence for pre-order, in-order, post-order?
+         - Write code for pre-order (iterative solution)
+      - Breadth-first search
+         - Write code for breadth-first search.
+- **Binary Search Tree**
+   - Which traversal will visit in ascending order?
+   - Which traversal will visit in descending order?
+- **Heap**
+   - What is heap?
+   - Array representation
+      - What is the index of left child?
+      - What is the index of right child?
+      - What is the index of parent?
+- **Trie**
+   - What is trie?
+   - What is the class structure for trie node?
+   - Write a code to add a word into a trie.
+   - Write a code to search a prefix from a trie.
+
+## Problem Patterns
+- What is the common solution for string prefix problems?
+- What is the common solution for symmetry problems (parenthesis, panlidrome)?
+- What are the common solutions (2) for top K or Kth problems?
+- What are the common solutions (2) for binary tree problems?
+- What are the common solutions (2) for ramdom problems?
+- What is the common solution for sum of sub-array problems?
+- What is the common solution for enumeration problem (find all combinations)?
+- What is the common solution for grouping problem?

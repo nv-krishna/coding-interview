@@ -1,0 +1,31 @@
+## Strategy
+
+- Separate all the numbers into 3 groups: positive, negative and zero and dump the numbers into different maps to track the occurrence of each number (Searching in HashMap is very fast).
+- Get all the unique numbers of the positive group and the negative respectively, sort the positive unique number list and the negative unique number list respectively.
+- Use 1 pointer in the positive unique number list and another pointer in the negative unique number list to traverse those 2 lists.
+    - Because of, besides result `[0, 0, 0]`, other results must have one positive number and one negative number
+- The pointer in the negative list go from the low end, the pointer in the positive list go from the high end.
+- Use 2 pointer to locate one positive number and one negative number and then check the target number is existing or not.
+    - Validate one positive number and one negative number to see the target number is still valid or not
+        - If `abs(neg) > abs(pos) * 2`, because of the positive list is already sorted, so definitely could not find the larger number than pos on the left side of pos. Move the negative pointer to the right next position.
+            - Like `(-10, 3)`, definitely could not find the a positive number larger than 3 on the left side of 3 to fight again -10 (because of list is ascending order)
+        - If `abs(pos) > abs (neg) * 2`, because of the negative list is already sorted, so definitely could not find the smaller number than neg on the right side of neg, Move the positive pointer to the left next position.
+            - Like `(-3, 10)`, definitely could not fine the a negative number smaller than -3 on the right side of -3 to fight again 10 (because of list of ascending order)
+    - If one positive number and one negative number are valid, separate the cases into 3 types and try to locate the target number
+        - **Case 1**: If `abs(neg) = abs(pos)`
+            - So the target should be 0, check the occurrence of `0`. If there has `0`, so it is valid result and add it into the result list
+                - Like `(-3, 3)`, so the target should be `0`. So just need to check the occurrence of `0` is more than 0.
+        - **Case 2**: If `abs(neg) < abs(pos)`
+            - Case 2.1: If `abs(pos) = abs (neg) * 2`
+                - So the target should be same as `neg`: `target = neg`, so check the occurrence of neg in the negative map. If the number of occurrence is more than one, it is valid result and add it into the result list.
+                    - Like `(-3, 6)`, so the target should be `-3` and the ideal result is `[-3. -3, 6]`. So just need to check the negative map to make sure that we can see at least 2 occurrences of `-3`.
+            - Case 2.2: If `abs(pos) < abs (neg) * 2`
+                - So the target should be: `target = 0-(neg+pos)`. So the target should be negative. So just need to check the target is existing in the negative map.
+                    - Like `(-4, 6)`, so the target is -2, so just need to make sure we can see -2 in the negative map.
+        - **Case 3**: If `abs(pos) < abs(neg)`
+            - Case 3.1: If `abs(neg) = abs(pos) * 2`
+                - So the target should be same as pos: `target = pos`, so check the occurrence of pos in the positive map. If the number of occurrence is more than one, it is valid result and add it into the result list.
+                    - Like `(-6, 3)`, so the target should be `3` and the ideal result is `[-6, 3, 3]`. So just need to check the positive map to make sure that we can see at least 2 occurrences of `3`.
+            - Case 3.2: If `abs(neg) < abs(pos) * 2`
+                - So the target should be: `target = 0-(neg+pos)`. So the target should be positive. So just need to check the target is existing in the positive map.
+                    - Like `(-6, 4)`, so the target is `2`, so just need to make sure we can see `2` in the positive map.
